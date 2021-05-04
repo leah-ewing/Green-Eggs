@@ -49,16 +49,18 @@ def make_chains(text_string):
     word = text_string.split()
 
     for i in range(len(word) - 2):
-        #test_list = []
-        #test_list.append(word[i + 2])
-        chains[ word[i], word[i + 1] ] = (word[i + 2])
+        test_list = []
+        # test_list.append(word[i + 2])
+        chains[ word[i], word[i + 1] ] = test_list
+        test_list.append(word[i + 2])
+    
         
 
-    for j in range(len(word) -2, -1):
-        # edit to only loop over last two words in list
-        #test_list = []
-        #test_list.append(word[i + 2])
-        chains[ word[j], word[j + 1] ] = (word[0]) # value should be first word in list
+    # for j in range(len(word) -2, -1):
+    #     # edit to only loop over last two words in list
+    #     #test_list = []
+    #     #test_list.append(word[i + 2])
+    #     chains[ word[j], word[j + 1] ] = (word[0]) # value should be first word in list
     return(chains)
         
 
