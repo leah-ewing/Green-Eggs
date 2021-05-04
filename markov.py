@@ -10,9 +10,13 @@ def open_and_read_file(file_path):
     the file's contents as one string of text.
     """
 
-    # your code goes here
+    opened_file = open(file_path).read()
+    
 
-    return 'Contents of your file as one long string'
+    return opened_file
+
+working_file = open_and_read_file('green-eggs.txt')
+# print(working_file)
 
 
 def make_chains(text_string):
@@ -42,10 +46,40 @@ def make_chains(text_string):
 
     chains = {}
 
-    # your code goes here
+    word = text_string.split()
 
-    return chains
+    for i in range(len(word) - 2):
+        #test_list = []
+        #test_list.append(word[i + 2])
+        chains[ word[i], word[i + 1] ] = (word[i + 2])
+        
 
+    for j in range(len(word) -2, -1):
+        # edit to only loop over last two words in list
+        #test_list = []
+        #test_list.append(word[i + 2])
+        chains[ word[j], word[j + 1] ] = (word[0]) # value should be first word in list
+    return(chains)
+        
+
+# create empty dictionary
+# take text input as a string, split that string into words
+# iterate over list of words in range of length of list minus one
+    # create key in dictionary for each pair of two words in list of words
+    # assign value to key in dictionary that is equal to next word in list after pair
+    # ?? make list as value and append words to list??
+
+
+
+    # print(word)
+
+        # print(chains)
+
+    # print('*'* 10)
+    print(chains)
+
+test_function = make_chains(working_file)
+print(test_function)
 
 def make_text(chains):
     """Return text from chains."""
