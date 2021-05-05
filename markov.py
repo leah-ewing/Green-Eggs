@@ -139,16 +139,30 @@ def make_chains(text_string):
 test_function = make_chains(working_file)
 print(test_function)
 
-#print(test_function is example_dict)
+if test_function == example_dict:
+    print('it matches')
 
+import random
 def make_text(chains):
     """Return text from chains."""
 
-    words = []
+    link_words = []
+    length = len(chains)
+    #print(length)
+    rand_num =  random.randint(0, length)
+    # print(rand_num)
 
-    # your code goes here
+    print(random.choice(list(chains)))
+    # pick random key from dictionary
+    # add tuple values of selected key to "link_words" list
+    # look up value for key in dictionary
+    # add random value from dictionary list to "link_words" list
+    # use last two words of "link_words" list as new key
+    # repeat!
+    
+    
 
-    return ' '.join(words)
+    return ' '.join(link_words)
 
 
 input_path = 'green-eggs.txt'
