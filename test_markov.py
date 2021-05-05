@@ -77,27 +77,15 @@ def make_chains(text_string):
     
     for i in range(len(word) - 2):
         #test_chains = []
+        test_list = []
         key = (word[i], word[i + 1])
         value = [] #appending new words value list (see below)
         #test_list.append(word[i + 2])
-    #for j in range(len(word) -2, -1):
-    #     # edit to only loop over last two words in list
-    #     #test_list = []
-    #     #test_list.append(word[i + 2])
-    #     chains[ word[j], word[j + 1] ] = (word[0])
-        
-        
-        #if key in chains:
-        #chains.has_key([ word[i], word[i + 1] ])
-        if chains.get(key) is not None:
-            chains[key].append(word[i + 2])  #add this word to existing list in dictionary
-        else:
-            value.append(word[i + 2])
-            chains[ word[i], word[i + 1] ] = value #.append(word[i + 2])
-        # value = value.append(word[i + 2])
-            # if True:
-                # value = value.append(word[i + 2])
-            #chains[key] = value.append(word[i + 2])
+        chains[ word[i], word[i + 1] ] = test_list
+        test_list.append(word[i + 2])
+        if chains.get(key, False):
+            for j in range(len(word) -2, -1):
+                
             
         # each value in dict, "chains" should be a list
         # check if key in dict, if it is, append new word to value (that is a list) for key 
