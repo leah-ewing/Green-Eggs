@@ -152,14 +152,35 @@ def make_text(chains):
     rand_num =  random.randint(0, length)
     # print(rand_num)
 
-    print(random.choice(list(chains)))
+    rand_key = (random.choice(list(chains)))
+    # link_words.append(str(rand_key))
+    
+    print(f'rand key = {rand_key}')
+
+    #link_words.append(rand_key + rand_key+1)
+
+    # link_words.append(str(chains[rand_key]))
+
+    random_value = random.choice(chains[rand_key])
+    print(f'rand value = {random_value}')
+    link_words.append(random_value)
+
+    (key_words, value_words) = rand_key
+    link_words.append(key_words)
+    link_words.append(value_words)
+    print(f'link = {link_words}')
     # pick random key from dictionary
     # add tuple values of selected key to "link_words" list
+    new_key = (link_words[-2], link_words[-1])
+    print(f'new_key = {new_key}')
     # look up value for key in dictionary
     # add random value from dictionary list to "link_words" list
     # use last two words of "link_words" list as new key
     # repeat!
-    
+    if new_key in chains:
+        link_chains = random.choice(chains[new_key])
+        link_words.append(link_chains)
+        print(f'link words = {link_words}')
     
 
     return ' '.join(link_words)
